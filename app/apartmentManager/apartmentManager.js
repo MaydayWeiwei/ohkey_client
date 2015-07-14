@@ -25,12 +25,12 @@ angular.module('frpromo.apartmentManager', ['ngRoute'])
             comment2: ""
         };
 
-        $scope.barList = Apte.query();
+        $scope.apartmentList = Apte.query();
 
         $scope.createApartment = function () {
 
             Apte.save($scope.apartment);
-            $scope.barList.push($scope.apartment);
+            $scope.apartmentList.push($scope.apartment);
             $scope.apartment = {
                 clientName: "",
                 tel: "",
@@ -49,10 +49,10 @@ angular.module('frpromo.apartmentManager', ['ngRoute'])
 
         $scope.deleteQuestion = function (apartmentItem) {
 
-            if (confirm("确定删除此问题:" + barItem.description)) {
-                Apte.delete({questionId: barItem.id});
-                var index = $scope.barList.indexOf(barItem);
-                $scope.barList.splice(index, 1);
+            if (confirm("确定删除此问题:" + aptetem.description)) {
+                Apte.delete({questionId: aptetem.id});
+                var index = $scope.apartmentList.indexOf(aptetem);
+                $scope.apartmentList.splice(index, 1);
             }
 
         };

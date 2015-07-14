@@ -76,7 +76,7 @@
 				   id="client_comments2"
 				   placeholder="Write addational comments here">
 		</div>
-		<button type="submit" class="btn btn-default" ng-disabled="createBrandForm.$invalid">Create Apartment</button>
+		<button type="submit" class="btn btn-default">Create Apartment</button>
 	</form>
 </div>
 <div class="row" style="padding: 20px 0px;">
@@ -97,21 +97,21 @@
 <div class="row" style="padding: 20px 0px;">
 	<input type="text" ng-model="keyword" placeholder="input the keyword here to filter">
 	<ul class="questionList">
-		<li ng-repeat="barItem in barList|filter:keyword" class="questionItem"
-			ng-init="viewItem = {clientName:barItem.clientName,editOn:false}">
+		<li ng-repeat="aptetem in apartmentList|filter:keyword" class="questionItem"
+			ng-init="viewItem = {clientName:aptetem.clientName,editOn:false}">
 			<div class="clearfix">
 
-				<button type="button" class="btn btn-danger" ng-click="deleteQuestion(barItem)">Delete</button>
-				{{barItem.id}}.{{barItem.clientName}}:{{barItem.tel}},
-				{{barItem.address}},
-				{{barItem.floor}},
-				{{barItem.door}},
-				{{barItem.enterCode}},
-				{{barItem.capacity}},
-				{{barItem.price}},
-				{{barItem.status}},
-				{{barItem.comments}},
-				{{barItem.comment2}}
+				<button type="button" class="btn btn-danger" ng-click="deleteQuestion(aptetem)">Delete</button>
+				{{aptetem.id}}.{{aptetem.clientName}}:{{aptetem.tel}},
+				{{aptetem.address}},
+				{{aptetem.floor}},
+				{{aptetem.door}},
+				{{aptetem.enterCode}},
+				{{aptetem.capacity}},
+				{{aptetem.price}},
+				{{aptetem.status}},
+				{{aptetem.comment1}},
+				{{aptetem.comment2}}
 			</div>
 
 		</li>

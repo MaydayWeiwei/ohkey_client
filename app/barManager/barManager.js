@@ -19,12 +19,12 @@ angular.module('frpromo.barManager', ['ngRoute'])
             comment: ""
         };
 
-        $scope.barList = Bar.query();
+        $scope.apartmentList = Bar.query();
 
         $scope.createBar = function () {
 
             Bar.save($scope.bar);
-            $scope.barList.push($scope.bar);
+            $scope.apartmentList.push($scope.bar);
             $scope.bar = {
                 barName: "",
                 tel: "",
@@ -37,10 +37,10 @@ angular.module('frpromo.barManager', ['ngRoute'])
 
         $scope.deleteQuestion = function (barItem) {
 
-            if (confirm("确定删除此问题:" + barItem.description)) {
-                Apte.delete({questionId: barItem.id});
-                var index = $scope.barList.indexOf(barItem);
-                $scope.barList.splice(index, 1);
+            if (confirm("确定删除此问题:" + aptetem.description)) {
+                Apte.delete({questionId: aptetem.id});
+                var index = $scope.apartmentList.indexOf(aptetem);
+                $scope.apartmentList.splice(index, 1);
             }
 
         };
