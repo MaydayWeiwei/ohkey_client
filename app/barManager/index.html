@@ -50,21 +50,21 @@
 <div class="row" style="padding: 20px 0px;">
 	<input type="text" ng-model="keyword" placeholder="input the keyword here to filter">
 	<ul class="questionList">
-		<li ng-repeat="aptetem in apartmentList|filter:keyword" class="questionItem"
-			ng-init="viewItem = {clientName:aptetem.clientName,editOn:false}">
+		<li ng-repeat="apteItem in apartmentList|filter:keyword" class="questionItem"
+			ng-init="viewItem = {clientName:apteItem.clientName,editOn:false}">
 			<div class="clearfix">
 
-				<button type="button" class="btn btn-danger" ng-click="deleteQuestion(aptetem)">Delete</button>
-				{{aptetem.id}}.{{aptetem.clientName}}:{{aptetem.tel}},
-				{{aptetem.address}},
-				{{aptetem.floor}},
-				{{aptetem.door}},
-				{{aptetem.enterCode}},
-				{{aptetem.capacity}},
-				{{aptetem.price}},
-				{{aptetem.status}},
-				{{aptetem.comments}},
-				{{aptetem.comment2}}
+				<button type="button" class="btn btn-danger" ng-click="deleteQuestion(apteItem)">Delete</button>
+				{{apteItem.id}}.{{apteItem.clientName}}:{{apteItem.tel}},
+				{{apteItem.address}},
+				{{apteItem.floor}},
+				{{apteItem.door}},
+				{{apteItem.enterCode}},
+				{{apteItem.capacity}},
+				{{apteItem.price}},
+				{{apteItem.status}},
+				{{apteItem.comments}},
+				{{apteItem.comment2}}
 			</div>
 
 		</li>

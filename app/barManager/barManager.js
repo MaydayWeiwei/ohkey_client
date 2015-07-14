@@ -37,9 +37,9 @@ angular.module('frpromo.barManager', ['ngRoute'])
 
         $scope.deleteQuestion = function (barItem) {
 
-            if (confirm("确定删除此问题:" + aptetem.description)) {
-                Apte.delete({questionId: aptetem.id});
-                var index = $scope.apartmentList.indexOf(aptetem);
+            if (confirm("确定删除此问题:" + apteItem.description)) {
+                Apte.delete({questionId: apteItem.id});
+                var index = $scope.apartmentList.indexOf(apteItem);
                 $scope.apartmentList.splice(index, 1);
             }
 
