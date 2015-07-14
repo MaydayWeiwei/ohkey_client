@@ -1,0 +1,89 @@
+<div class="row">
+	<form novalidate name="createTestForm" ng-submit="testSubmit()">
+
+		<div class="form-group">
+			<label class="sr-only" for="name_fr">Nom de la marque</label>
+			<input ng-minlength="5" ng-maxlength="7" type="text" name="name_fr" ng-model="brand.name_fr"
+				   class="form-control" id="name_fr"
+				   placeholder="Nom de la marque" required>
+			name_fr: {{brand.name_fr}}
+			<p class="comment">Test1: The ng-minlength=5 , the model value can be binded only when the condition is
+				satisfied :{{brand.name_fr}}</p>
+		</div>
+		<p class="comment"><b>Test2: using ng-messages below (the message predefined will):</b></p>
+
+		<div class="error" ng-messages="createTestForm.name_fr.$error">
+			<div ng-message="minlength">Minlength error:Your name must be at least 5 characters</div>
+			<div ng-message="maxlength">Maxlength error:Your name cannot be longer than 7 characters</div>
+			<div ng-message="required">Required error:This field is required</div>
+		</div>
+
+		<div class="form-group">
+			<label class="sr-only" for="brandImg">品牌图片</label>
+
+			<button class="btn btn-info" ngf-select name="brandImg" ng-model="brandImg" class="form-control"
+					id="brandImg" accept="image/*">
+				上传Logo
+			</button>
+			{{brandImg[0].anme}}
+		</div>
+		<p class="comment">Test3:use ng-disabled to disable the submit when form is not validated </p>
+		<button type="submit" ng-disabled="createTestForm.$invalid" class="btn btn-default">创建品牌</button>
+	</form>
+	<img ng-show="brandImg[0]!=null" class="logo" ngf-src="brandImg[0]">
+
+	<div class="clearfix"></div>
+	<p class="comment">Test4:ng model with viewValue modelValue </p>
+	<input type="button" ng-click="changeViewValue()" value="Change view value with '=' ">
+	<input type="button" ng-click="changeViewValue2()" value="Change view value with setView ">
+
+	<p class="comment">Test5:ng-repeat and $index when there is a filter </p>
+	Input query word here: <input type="text" ng-model="query">
+	<ul>
+		<li ng-repeat="item in test5Items|filter:query">
+			{{item}}<input type="button" value="click to show index" ng-click="testRepeat($index);">
+		</li>
+	</ul>
+
+	<p class="comment">Test6:Dialog</p>
+	The data to be transferred here: <input type="text" ng-model="testModelData">
+	this is the data back from: {{dataBacked}}
+	<input type="button" ng-click="showDialog()" value="click to show dialog">
+
+	<p class="comment">Test7:ng-select ng-options</p>
+	<select ng-options="item.label for item in values" ng-model="selected"></select>
+	Selected value:{{selected}}
+	<br/>
+
+	<p class="comment">Test8:ng-select ng-options with track by value</p>
+	<select ng-options="item.id for item in values track by item.label" ng-model="selected1"></select>
+	Selected value1:{{selected1}}
+	<p class="form-group">
+		<input type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="testDate" is-open="opened"
+			   datepicker-options="dateOptions"  ng-required="true"
+			   close-text="Close"/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event)"><i
+						class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+	</p>
+	Date selecteded: {{testDate|date:'dd/MM/yyyy'}}
+</div>
+
+<script type="text/ng-template" id="testModalContent.html">
+	<div class="modal-header">
+		<h3 class="modal-title">Delete warning</h3>
+	</div>
+	<div class="modal-body">
+		<ul>
+			the transferred info:{{info}}
+		</ul>
+		<input type="text" ng-model="infoToPutback">
+
+
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" ng-click="ok()">OK</button>
+		<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+	</div>
+</script>
