@@ -13,3 +13,10 @@ frpromoServices.factory('Apte', ['$resource','settings',
     }]);
 
 
+frpromoServices.factory('Bar', ['$resource','settings',
+    function($resource,settings){
+        return $resource(settings.backendUrl+'admin/bar/:barId',{barId:'@id'},{
+            'update':{method:'PUT'}
+        });
+    }]);
+

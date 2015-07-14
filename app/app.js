@@ -4,6 +4,7 @@
 var frpromoApp = angular.module('frpromo', [
     'ngRoute',
     'frpromo.apartmentManager',
+    'frpromo.barManager',
     'frpromo.test',
     'frpromoServices',
     'myApp.version',

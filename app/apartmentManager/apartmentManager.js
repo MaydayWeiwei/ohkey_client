@@ -8,31 +8,51 @@ angular.module('frpromo.apartmentManager', ['ngRoute'])
             controller: 'apteManagerCtrl'
         });
     }])
+
     .controller('apteManagerCtrl', ['$scope', 'Upload', 'settings', 'Apte', '$modal', function ($scope, Upload, settings, Apte, $modal) {
 
-        $scope.question = {description: "", optionList: []};
-        $scope.addOption = function () {
-            $scope.question.optionList.push({description: $scope.question_option_temp});
-            $scope.question_option_temp = "";
+        $scope.apartment = {
+            clientName: "",
+            tel: "",
+            address: '',
+            floor: "",
+            door: "",
+            enterCode: "",
+            capacity: "",
+            price: "",
+            status: "",
+            comment1: "",
+            comment2: ""
+        };
+
+        $scope.barList = Apte.query();
+
+        $scope.createApartment = function () {
+
+            Apte.save($scope.apartment);
+            $scope.barList.push($scope.apartment);
+            $scope.apartment = {
+                clientName: "",
+                tel: "",
+                address: '',
+                floor: "",
+                door: "",
+                enterCode: "",
+                capacity: "",
+                price: "",
+                status: "",
+                comment1: "",
+                comment2: ""
+            };
 
         };
 
-        $scope.questionList = Apte.query();
+        $scope.deleteQuestion = function (apartmentItem) {
 
-        $scope.createQuestion = function () {
-
-            Apte.save($scope.question);
-            $scope.questionList.push($scope.question);
-            $scope.question = {description: "", optionList: []};
-            $scope.question_option_temp = "";
-        };
-
-        $scope.deleteQuestion = function (questionItem) {
-
-            if (confirm("确定删除此问题:" + questionItem.description)) {
-                Apte.delete({questionId: questionItem.id});
-                var index = $scope.questionList.indexOf(questionItem);
-                $scope.questionList.splice(index, 1);
+            if (confirm("确定删除此问题:" + barItem.description)) {
+                Apte.delete({questionId: barItem.id});
+                var index = $scope.barList.indexOf(barItem);
+                $scope.barList.splice(index, 1);
             }
 
         };
