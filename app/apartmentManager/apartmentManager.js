@@ -47,11 +47,11 @@ angular.module('frpromo.apartmentManager', ['ngRoute'])
 
         };
 
-        $scope.deleteApartment = function (apteItem) {
+        $scope.deleteApartment = function (aptItem) {
 
             if (confirm("Are you sure to delete this apartment?")) {
-                Apte.delete({apteId: apteItem.id});
-                var index = $scope.apartmentList.indexOf(apteItem);
+                Apte.delete({aptId: aptItem.id});
+                var index = $scope.apartmentList.indexOf(aptItem);
                 $scope.apartmentList.splice(index, 1);
             }
 
