@@ -20,3 +20,10 @@ frpromoServices.factory('Bar', ['$resource','settings',
         });
     }]);
 
+frpromoServices.factory('Code', ['$resource','settings',
+    function($resource,settings){
+        return $resource(settings.backendUrl+'admin/code/:codeId',{codeId:'@id'},{
+            'update':{method:'PUT'}
+        });
+    }]);
+

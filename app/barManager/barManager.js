@@ -1,5 +1,4 @@
 'use strict';
-
 angular.module('frpromo.barManager', ['ngRoute'])
 
     .config(['$routeProvider', function ($routeProvider) {
@@ -12,19 +11,19 @@ angular.module('frpromo.barManager', ['ngRoute'])
     .controller('barManagerCtrl', ['$scope', 'Upload', 'settings', 'Bar', '$modal', function ($scope, Upload, settings, Bar, $modal) {
 
         $scope.bar = {
-            clientName: "",
+            barName: "",
             tel: "",
             address: '',
             status: "",
             comment: ""
         };
 
-        $scope.apartmentList = Bar.query();
+        $scope.barList = Bar.query();
 
         $scope.createBar = function () {
 
             Bar.save($scope.bar);
-            $scope.apartmentList.push($scope.bar);
+            $scope.barList.push($scope.bar);
             $scope.bar = {
                 barName: "",
                 tel: "",
@@ -37,10 +36,10 @@ angular.module('frpromo.barManager', ['ngRoute'])
 
         $scope.deleteQuestion = function (barItem) {
 
-            if (confirm("确定删除此问题:" + apteItem.description)) {
-                Apte.delete({questionId: apteItem.id});
-                var index = $scope.apartmentList.indexOf(apteItem);
-                $scope.apartmentList.splice(index, 1);
+            if (confirm("确定删除此问题:" + barItem.description)) {
+                Apte.delete({barId: barItem.id});
+                var index = $scope.barList.indexOf(barItem);
+                $scope.barList.splice(index, 1);
             }
 
         };

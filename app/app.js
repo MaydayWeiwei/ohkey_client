@@ -5,11 +5,13 @@ var frpromoApp = angular.module('frpromo', [
     'ngRoute',
     'frpromo.apartmentManager',
     'frpromo.barManager',
+    'frpromo.codeManager',
     'frpromo.test',
     'frpromoServices',
     'myApp.version',
     'ui.bootstrap',
-    'ngFileUpload'
+    'ngFileUpload',
+    'ui.date'
 ]);
 
 frpromoApp.config(['$routeProvider', function ($routeProvider) {

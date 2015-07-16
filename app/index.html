@@ -19,6 +19,7 @@
 	<link rel="stylesheet" href="app.css">
 	<link rel="stylesheet" href="test.css">
 	<script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+	<link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.css"/>
 </head>
 <body>
 <div class="container">
@@ -26,6 +27,7 @@
 		<ul class="menu">
 			<li><a href="#/apartmentManager">Apartment Manager</a></li>
 			<li><a href="#/barManager">Bar Manager</a></li>
+			<li><a href="#/codeManager">Code Manager</a></li>
 			<li><a href="#/test">Test Manager</a></li>
 		</ul>
 	</div>
@@ -42,7 +44,8 @@
 	<div class="row" style="height:20px;border-bottom: 1px black solid"></div>
 	<div style="text-align: center">Frpromo Backend Version: v<span app-version></span></div>
 </div>
-
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="bower_components/jquery-ui/jquery-ui.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/ng-file-upload/ng-file-upload-shim.js"></script>
@@ -50,9 +53,11 @@
 <script src="bower_components/angular-messages/angular-messages.js"></script>
 <script src="bower_components/angular-resource/angular-resource.js"></script>
 <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script type="text/javascript" src="bower_components/angular-ui-date/src/date.js"></script>
 <script src="app.js"></script>
 <script src="apartmentManager/apartmentManager.js"></script>
 <script src="barManager/barManager.js"></script>
+<script src="codeManager/codeManager.js"></script>
 <script src="test/test.js"></script>
 <script src="services.js"></script>
 <script src="components/version/version.js"></script>
