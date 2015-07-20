@@ -11,6 +11,8 @@ angular.module('frpromo.apartmentManager', ['ngRoute'])
 
     .controller('apteManagerCtrl', ['$scope', 'Upload', 'settings', 'Apte', '$modal', function ($scope, Upload, settings, Apte, $modal) {
 
+        $scope.select_status = ["not live", "available", "unavailable"];
+
         $scope.apartment = {
             clientName: "",
             tel: "",
@@ -20,10 +22,12 @@ angular.module('frpromo.apartmentManager', ['ngRoute'])
             enterCode: "",
             capacity: "",
             price: "",
-            status: "",
+            status: $scope.select_status[0],
             comment1: "",
             comment2: ""
         };
+
+        $scope.apte_status=$scope.select_status[0];
 
         $scope.apartmentList = Apte.query();
 
@@ -45,6 +49,10 @@ angular.module('frpromo.apartmentManager', ['ngRoute'])
                 comment2: ""
             };
 
+        };
+
+        $scope.updateStatus = function (aptItem) {
+            Apte.update ({aptId: aptItem.id, newStatus: aptItem.status});
         };
 
         $scope.deleteApartment = function (aptItem) {

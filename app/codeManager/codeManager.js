@@ -13,7 +13,7 @@ angular.module('frpromo.codeManager', ['ngRoute'])
         $scope.code = {
             startDate: "",
             endDate: "",
-            keyId: ''
+            keyInfo: ''
         };
 
         $scope.codeList = Code.query();
@@ -25,7 +25,7 @@ angular.module('frpromo.codeManager', ['ngRoute'])
             $scope.code = {
                 startDate: "",
                 endDate: "",
-                keyId: ''
+                keyInfo: ''
             };
 
         };

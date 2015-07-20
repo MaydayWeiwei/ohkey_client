@@ -1,21 +1,19 @@
 <div class="row">
-	<form novalidate name="createQuestionForm" class="form-inline" ng-submit="createBar()">
+	<form novalidate name="createQuestionForm" class="form-inline" ng-submit="createCode()">
 		<div class="form-group">
 			<label class="sr-only" for="key_id">keyid</label>
-			<input type="text" name="keyId" ng-model="code.keyId" class="form-control"
+			<input type="text" name="keyInfo" ng-model="code.keyInfo" class="form-control"
 				   id="key_id"
 				   placeholder="key id" required>
 		</div>
 		<br>
 		<div class="form-group">
-			<label class="sr-only" for="start_date">tel</label>
 			<input type="text" name="startDate" ng-model="code.startDate" class="form-control"
 				   id="start_date" placeholder="Start Date"
 				   ui-date>
 		</div>
 		<br>
 		<div class="form-group">
-			<label class="sr-only" for="end_date">address</label>
 			<input type="text" name="endDate" ng-model="code.endDate" class="form-control"
 				   id="end_date"
 				   placeholder="End Date" ui-date>

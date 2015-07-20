@@ -57,10 +57,7 @@
 		</div>
 		<br>
 		<div class="form-group">
-			<label class="sr-only" for="client_status">status</label>
-			<input type="text" name="status" ng-model="apartment.status" class="form-control"
-				   id="client_status"
-				   placeholder="status">
+			<select ng-model="apartment.status" ng-options="ss for ss in select_status"></select>
 		</div>
 		<br>
 		<div class="form-group">
@@ -74,24 +71,10 @@
 			<label class="sr-only" for="client_comments2">comments2</label>
 			<input type="text" name="comments2" ng-model="apartment.comment2" class="form-control"
 				   id="client_comments2"
-				   placeholder="Write addational comments here">
+				   placeholder="Write additional comments here">
 		</div>
 		<button type="submit" class="btn btn-default">Create Apartment</button>
 	</form>
-</div>
-<div class="row" style="padding: 20px 0px;">
-	{{apartment.clientName}}<br/>
-	{{apartment.tel}}
-	{{apartment.address}}
-	{{apartment.floor}}
-	{{apartment.door}}
-	{{apartment.enterCode}}
-	{{apartment.capacity}}
-	{{apartment.price}}
-	{{apartment.status}}
-	{{apartment.comment1}}
-	{{apartment.comment2}}
-
 </div>
 <div class="row" style="height:20px; border-bottom: 1px black solid"></div>
 <div class="row" style="padding: 20px 0px;">
@@ -112,6 +95,7 @@
 				{{apteItem.status}},
 				{{apteItem.comment1}},
 				{{apteItem.comment2}}
+				<select ng-model="apteItem.status" ng-options="ss for ss in select_status" ng-change="updateStatus(apteItem)"></select>
 			</div>
 
 		</li>
