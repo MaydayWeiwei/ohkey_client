@@ -6,6 +6,7 @@ var frpromoApp = angular.module('frpromo', [
     'frpromo.apartmentManager',
     'frpromo.barManager',
     'frpromo.codeManager',
+    'frpromo.barGestion',
     'frpromo.test',
     'frpromoServices',
     'myApp.version',

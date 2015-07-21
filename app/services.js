@@ -26,4 +26,3 @@ frpromoServices.factory('Code', ['$resource','settings',
             'update':{method:'PUT'}
         });
     }]);
-
