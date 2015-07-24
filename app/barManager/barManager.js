@@ -8,7 +8,7 @@ angular.module('frpromo.barManager', ['ngRoute'])
         });
     }])
 
-    .controller('barManagerCtrl', ['$scope', 'Upload', 'settings', 'Bar', '$modal', function ($scope, Upload, settings, Bar, $modal) {
+    .controller('barManagerCtrl', ['$scope', 'Upload', 'settings', 'Bar', 'Apte', '$modal', function ($scope, Upload, settings, Bar, Apte, $modal) {
 
         $scope.bar = {
             barName: "",
@@ -17,6 +17,8 @@ angular.module('frpromo.barManager', ['ngRoute'])
             status: "",
             comment: ""
         };
+
+        $scope.aptList = Apte.query();
 
         $scope.barList = Bar.query();
 
@@ -32,6 +34,10 @@ angular.module('frpromo.barManager', ['ngRoute'])
                 comment: ""
             };
 
+        };
+
+        $scope.addApartment = function (aa, barItem) {
+            Bar.update({barId: barItem.id, aptId: aa.clientName.id});
         };
 
         $scope.deleteQuestion = function (barItem) {

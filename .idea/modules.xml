@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/ohkey_client.iml" filepath="$PROJECT_DIR$/.idea/ohkey_client.iml" />
-      <module fileurl="file://$USER_HOME$/WebstormProjects/ohkey_client/.idea/ohkey_client.iml" filepath="$USER_HOME$/WebstormProjects/ohkey_client/.idea/ohkey_client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ohkey_client.iml" filepath="$PROJECT_DIR$/.idea/ohkey_client.iml" />
     </modules>
   </component>
 </project>

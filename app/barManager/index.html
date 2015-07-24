@@ -61,7 +61,8 @@
 				{{barItem.tel}},
 				{{barItem.address}},
 				{{barItem.status}},
-				{{barItem	.comment}}.
+				{{barItem.comment}}
+				<select ng-model="aa.clientName" ng-options="aa.clientName for aa in aptList" ng-change="addApartment(aa, barItem)"></select>
 			</div>
 
 		</li>
