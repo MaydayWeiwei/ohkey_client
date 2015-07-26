@@ -1,22 +1,20 @@
 <div class="row">
 	<form novalidate name="createQuestionForm" class="form-inline" ng-submit="createCode()">
 		<div class="form-group">
-			<label class="sr-only" for="key_id">keyid</label>
-			<input type="text" name="keyInfo" ng-model="code.keyInfo" class="form-control"
-				   id="key_id"
-				   placeholder="key id" required>
+			Choose which apartment to generate code<label class="sr-only" >Aptename</label>
+			<select ng-model="apartmentInfo" ng-options="aa.clientName for aa in aptList" ></select>
 		</div>
 		<br>
 		<div class="form-group">
 			<input type="text" name="startDate" ng-model="code.startDate" class="form-control"
 				   id="start_date" placeholder="Start Date"
-				   ui-date>
+				   ui-date="{ dateFormat: 'yy-mm-dd' }">
 		</div>
 		<br>
 		<div class="form-group">
 			<input type="text" name="endDate" ng-model="code.endDate" class="form-control"
 				   id="end_date"
-				   placeholder="End Date" ui-date>
+				   placeholder="End Date" ui-date="{ dateFormat: 'yy-mm-dd' }">
 		</div>
 
 		<button type="submit" class="btn btn-default" ng-disabled="createBrandForm.$invalid">Generate Code</button>

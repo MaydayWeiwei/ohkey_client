@@ -8,7 +8,7 @@ var frpromoServices = angular.module('frpromoServices', ['ngResource']);
 frpromoServices.factory('Apte', ['$resource','settings',
     function($resource,settings){
         return $resource(settings.backendUrl+'admin/apartment/:aptId',{aptId:'@aptId'}, {
-            'update': {method:'PUT', params: {newStatus: '@newStatus'}}
+            'update': {method:'PUT', params: {newStatus: '@newStatus'}},
         });
     }]);
 
@@ -23,6 +23,6 @@ frpromoServices.factory('Bar', ['$resource','settings',
 frpromoServices.factory('Code', ['$resource','settings',
     function($resource,settings){
         return $resource(settings.backendUrl+'admin/code/:codeId',{codeId:'@id'},{
-            'update':{method:'PUT'}
+            'save': {method: 'POST', params: {startDate: '@startDate', endDate: '@endDate', aptId: '@aptId'}}
         });
     }]);

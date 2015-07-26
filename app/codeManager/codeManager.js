@@ -8,24 +8,24 @@ angular.module('frpromo.codeManager', ['ngRoute'])
         });
     }])
 
-    .controller('codeManagerCtrl', ['$scope', 'Upload', 'settings', 'Code', '$modal', function ($scope, Upload, settings, Code, $modal) {
+    .controller('codeManagerCtrl', ['$scope', 'Upload', 'settings', 'Code', 'Apte','$modal', function ($scope, Upload, settings, Code,Apte, $modal) {
 
         $scope.code = {
             startDate: "",
-            endDate: "",
-            keyInfo: ''
+            endDate: ""
         };
 
         $scope.codeList = Code.query();
 
+        $scope.aptList = Apte.query();
+
         $scope.createCode = function () {
 
-            Code.save($scope.code);
+            Code.save({startDate: $scope.code.startDate, endDate: $scope.code.endDate, aptId: $scope.apartmentInfo.id});
             $scope.codeList.push($scope.code);
             $scope.code = {
                 startDate: "",
-                endDate: "",
-                keyInfo: ''
+                endDate: ""
             };
 
         };
