@@ -1,0 +1,11 @@
+<form ng-submit="onLogin()" name="form" ng-controller="LoginCtrl">
+	<fieldset>
+		<legend>Log In</legend>
+		<div class="form-field">
+			<input type="text" ng-model="vm.username" name="username" required="">
+			<div class="form-field">
+				<input type="password" ng-model="vm.password" name="password" required="">
+			</div></div></fieldset>
+	<button type="submit" class="btn btn-default" ng-disabled="createBrandForm.$invalid">Log In</button>
+	<a href="#/barManager">New user?</a>
+</form>

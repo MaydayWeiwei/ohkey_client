@@ -38,6 +38,7 @@ angular.module('frpromo.barManager', ['ngRoute'])
 
         $scope.addApartment = function (aa, barItem) {
             Bar.update({barId: barItem.id, aptId: aa.clientName.id});
+
         };
 
         $scope.deleteQuestion = function (barItem) {

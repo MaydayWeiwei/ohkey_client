@@ -10,19 +10,16 @@ angular.module('frpromo.barGestion', ['ngRoute'])
 
     .controller('barGestionCtrl', ['$scope', 'Upload', 'settings', 'Code', '$modal', function ($scope, Upload, settings, Code, $modal) {
 
-        $scope.bargestion = {
-            generatedCode: ""
+        $scope.keyInformation = {
+            id: "",
+            externalKey: ""
         };
 
         $scope.bargestionList = Code.query();
 
-        $scope.createBargestion = function () {
+        $scope.validateCode = function (codeEntered) {
 
-            Code.save($scope.bargestion);
-            $scope.bargestionList.push($scope.bargestion);
-            $scope.bargestion = {
-                generatedCode: ""
-            };
+            $scope.keyInformation = Code.update ({generateCode: codeEntered});
 
         };
 

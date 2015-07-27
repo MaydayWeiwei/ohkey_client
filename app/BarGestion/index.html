@@ -1,5 +1,5 @@
 <div class="row">
-	<form novalidate name="createQuestionForm" class="form-inline" ng-submit="createBargestion()">
+	<form novalidate name="createQuestionForm" class="form-inline" ng-submit="validateCode(bg.generatedCode)">
 		<div class="form-group">
 			<label class="sr-only" for="bg.generatedCode">generatedCode</label>
 			<input type="text" name="generatedCode" ng-model="bg.generatedCode" class="form-control"
@@ -10,6 +10,13 @@
 		<button type="submit" class="btn btn-default" ng-disabled="createBrandForm.$invalid">Validate Code</button>
 	</form>
 </div>
+
+
+
+</br>
+</br>
+<H>External Key</H> :
+<p>{{keyInformation.externalKey}}</p>
 
 
 
